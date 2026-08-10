@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('booking_types', function (Blueprint $table) {
             $table->id();
+            $table->string('booking_type_name');
+            $table->text('description');
+            $table->decimal('entrance_fee', 8, 2);
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }
