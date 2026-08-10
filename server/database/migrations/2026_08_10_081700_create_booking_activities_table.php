@@ -19,7 +19,6 @@ return new class extends Migration
             $table->decimal('subtotal', 10, 2);
             $table->string('id_number');
             $table->timestamps();
-            $table->timestamps();
         });
     }
 
