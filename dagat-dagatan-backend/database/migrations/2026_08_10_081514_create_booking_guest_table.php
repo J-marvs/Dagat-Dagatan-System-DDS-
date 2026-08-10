@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('booking_guest', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('bookings_id')->constrainred('bookings')->onDelete('cascade');
+            $table->string('full_name');
+            $table->integer('age');
+            $table->string('id_type');
+            $table->string('id_number');
             $table->timestamps();
         });
     }

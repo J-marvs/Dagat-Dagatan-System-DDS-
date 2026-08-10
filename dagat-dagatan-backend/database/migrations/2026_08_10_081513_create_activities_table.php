@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
+            $table->string('activity_name');
+            $table->text('description');
+            $table->decimal('price', 10, 2);
+            $table->string('pricing_unit');
+            $table->string('image');
+            $table->string('status');
             $table->timestamps();
         });
     }

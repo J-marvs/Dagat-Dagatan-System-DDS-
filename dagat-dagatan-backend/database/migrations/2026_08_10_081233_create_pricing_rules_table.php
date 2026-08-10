@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('pricing_rules', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('booking_types_id')->constrained('booking_types')->onDelete('cascade');
+            $table->string('rule_name');
+            $table->decimal('discount_percent', 5, 2);
+            $table->integer('minimum_age');
+            $table->integer('maximum_age');
+            $table->boolean('requires_id')->default(false);
+            $table->string('status');
             $table->timestamps();
         });
     }
